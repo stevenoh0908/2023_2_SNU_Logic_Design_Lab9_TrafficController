@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=/csehome/jeehye/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficController.ncd
-OUTFILE=/csehome/jeehye/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficController.bit
+INFILE=/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficController.ncd
+OUTFILE=/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficController.bit
 FAMILY=Spartan3A and Spartan3AN
 PART=xc3s50an-4tqg144
-WORKINGDIR=/csehome/jeehye/2023_2_SNU_Logic_Design_Lab9_TrafficController
+WORKINGDIR=/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController
 LICENSE=WebPack
 USER_INFO=211016637_0_0_814

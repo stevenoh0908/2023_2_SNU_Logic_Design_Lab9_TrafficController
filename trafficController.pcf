@@ -1,13 +1,24 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Nov 30 21:21:08 2023
+// Written by: Map P.20131013 on Thu Nov 30 22:19:45 2023
 //! **************************************************************************
 
 SCHEMATIC START;
+COMP "timer_seg_low<4>" LOCATE = SITE "P79" LEVEL 1;
 COMP "time_yellow<3>" LOCATE = SITE "P45" LEVEL 1;
+COMP "timer_seg_low<5>" LOCATE = SITE "P78" LEVEL 1;
 COMP "highway_green" LOCATE = SITE "P93" LEVEL 1;
+COMP "timer_seg_low<6>" LOCATE = SITE "P77" LEVEL 1;
 COMP "country_yellow" LOCATE = SITE "P88" LEVEL 1;
+COMP "timer_seg_high<0>" LOCATE = SITE "P76" LEVEL 1;
+COMP "timer_seg_high<1>" LOCATE = SITE "P75" LEVEL 1;
 COMP "country_red" LOCATE = SITE "P87" LEVEL 1;
+COMP "timer_seg_high<2>" LOCATE = SITE "P72" LEVEL 1;
 COMP "country_green" LOCATE = SITE "P90" LEVEL 1;
+COMP "timer_seg_high<3>" LOCATE = SITE "P71" LEVEL 1;
+COMP "timer_seg_high<4>" LOCATE = SITE "P70" LEVEL 1;
+COMP "timer_seg_high<5>" LOCATE = SITE "P69" LEVEL 1;
+COMP "timer_seg_high<6>" LOCATE = SITE "P68" LEVEL 1;
+COMP "tm_carsync" LOCATE = SITE "P6" LEVEL 1;
 COMP "car_async" LOCATE = SITE "P30" LEVEL 1;
 COMP "clock" LOCATE = SITE "P57" LEVEL 1;
 COMP "highway_yellow" LOCATE = SITE "P92" LEVEL 1;
@@ -16,9 +27,16 @@ COMP "time_country<0>" LOCATE = SITE "P31" LEVEL 1;
 COMP "time_country<1>" LOCATE = SITE "P32" LEVEL 1;
 COMP "time_country<2>" LOCATE = SITE "P33" LEVEL 1;
 COMP "time_country<3>" LOCATE = SITE "P41" LEVEL 1;
+COMP "tm_yellow" LOCATE = SITE "P5" LEVEL 1;
 COMP "highway_red" LOCATE = SITE "P91" LEVEL 1;
+COMP "tm_country" LOCATE = SITE "P4" LEVEL 1;
+COMP "timer_seg_low<0>" LOCATE = SITE "P85" LEVEL 1;
+COMP "tm_reset" LOCATE = SITE "P3" LEVEL 1;
+COMP "timer_seg_low<1>" LOCATE = SITE "P84" LEVEL 1;
 COMP "time_yellow<0>" LOCATE = SITE "P42" LEVEL 1;
+COMP "timer_seg_low<2>" LOCATE = SITE "P83" LEVEL 1;
 COMP "time_yellow<1>" LOCATE = SITE "P43" LEVEL 1;
+COMP "timer_seg_low<3>" LOCATE = SITE "P82" LEVEL 1;
 COMP "time_yellow<2>" LOCATE = SITE "P44" LEVEL 1;
 SCHEMATIC END;
 

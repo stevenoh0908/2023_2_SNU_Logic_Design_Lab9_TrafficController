@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module trafficlightDecoder(
-    input state,
+    input [1:0] state,
     output reg country_red,
     output reg country_yellow,
     output reg country_green,
@@ -36,26 +36,36 @@ module trafficlightDecoder(
 
 	// comb logic for decoding state
 	always @(state) begin
-		country_red = 0;
-		country_yellow = 0;
-		country_green = 0;
-		highway_red = 0;
-		highway_yellow = 0;
-		highway_green = 0;
 		case (state)
 			STATE_HG: begin
+				country_yellow = 0;
+				country_green = 0;
+				highway_red = 0;
+				highway_yellow = 0;
 				country_red = 1;
 				highway_green = 1;
 			end
 			STATE_HY: begin
+				country_red = 0;
+				country_green = 0;
+				highway_red = 0;
+				highway_green = 0;
 				country_yellow = 1;
 				highway_yellow = 1;
 			end
 			STATE_SG: begin
+				country_red = 0;
+				country_yellow = 0;
+				highway_yellow = 0;
+				highway_green = 0;
 				country_green = 1;
 				highway_red = 1;
 			end
 			STATE_SY: begin
+				country_red = 0;
+				country_green = 0;
+				highway_red = 0;
+				highway_green = 0;
 				country_yellow = 1;
 				highway_yellow = 1;
 			end

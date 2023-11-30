@@ -8,7 +8,25 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/csehome/jeehye/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficTimer.v&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/BCDto7SegmentDecoder.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/carSensorSync.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/counter_4bit.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficController.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficNextState.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficTimer.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficlightDecoder.v&quot; into library work</arg>
 </msg>
 
 </messages>

@@ -29,20 +29,31 @@ module trafficController(
     output country_green,
     output highway_red,
     output highway_yellow,
-    output highway_green
+    output highway_green,
+	 output [6:0] timer_seg_high,
+	 output [6:0] timer_seg_low,
+	 // DEBUGGING
+	 output tm_reset,
+	 output tm_country, output tm_yellow,
+	 output tm_carsync
     );
 
 	// init wires
 	wire car_sync;
 	wire al_country, al_yellow;
-	wire timer_reset;
 	wire [1:0] traffic_state;
-	wire t_reset;
+	wire [3:0] timer_BCD;
+	
+	// DEBUGGING
+	assign tm_carsync = car_sync;
+	assign tm_country = al_country;
+	assign tm_yellow = al_yellow;
+	assign tm_reset = reset;
 
 	// init each modules
 	carSensorSync carsync(.car_async(car_async), .clock(clock), .reset(reset), .car_sync(car_sync));
-	trafficTimer timer(.clock(clock), .reset(timer_reset), .load(1), .data_country(time_country), .data_yellow(time_yellow), .time_country(al_country), .time_yellow(al_yellow));
-	trafficNextState nextstate(.clock(clock), .reset(reset), .car_sync(car_sync), .time_country(al_country), .time_yellow(al_yellow), .traffic_state(traffic_state), .t_reset(t_reset));
+	trafficTimer timer(.clock(clock), .reset(reset), .load(1), .state(traffic_state), .car_sync(car_sync), .data_country(time_country), .data_yellow(time_yellow), .time_country(al_country), .time_yellow(al_yellow), .current_time(timer_BCD));
+	trafficNextState nextstate(.clock(clock), .reset(reset), .car_sync(car_sync), .time_country(al_country), .time_yellow(al_yellow), .traffic_state(traffic_state));
 	trafficlightDecoder decoder(.state(traffic_state),
 		.country_red(country_red),
 		.country_yellow(country_yellow),
@@ -50,8 +61,6 @@ module trafficController(
 		.highway_red(highway_red),
 		.highway_yellow(highway_yellow),
 		.highway_green(highway_green));
-
-	// comb logic for wires
-	assign timer_reset = reset | t_reset;
+	BCDto7SegmentDecoder decoder_country(.bcd(timer_BCD), .display_high(timer_seg_high), .display_low(timer_seg_low));
 
 endmodule

@@ -5,39 +5,4 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;trafficController.v&quot; line 44 </arg>Connection to input port &apos;<arg fmt="%s" index="2">load</arg>&apos; does not match port size
-</msg>
-
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;trafficTimer.v&quot; line 40 </arg>Connection to input port &apos;<arg fmt="%s" index="2">enable</arg>&apos; does not match port size
-</msg>
-
-<msg type="warning" file="HDLCompilers" num="259" delta="old" ><arg fmt="%s" index="1">&quot;trafficController.v&quot; line 46 </arg>Connection to input port &apos;<arg fmt="%s" index="2">state</arg>&apos; does not match port size
-</msg>
-
-<msg type="warning" file="Xst" num="905" delta="new" >&quot;<arg fmt="%s" index="1">trafficTimer.v</arg>&quot; line <arg fmt="%d" index="2">63</arg>: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-<arg fmt="%s" index="3">&lt;reg_country&gt;, &lt;reg_yellow&gt;</arg>
-</msg>
-
-<msg type="warning" file="Xst" num="916" delta="old" >&quot;<arg fmt="%s" index="1">trafficNextState.v</arg>&quot; line <arg fmt="%d" index="2">54</arg>: Delay is ignored for synthesis.
-</msg>
-
-<msg type="warning" file="Xst" num="916" delta="old" >&quot;<arg fmt="%s" index="1">trafficNextState.v</arg>&quot; line <arg fmt="%d" index="2">62</arg>: Delay is ignored for synthesis.
-</msg>
-
-<msg type="warning" file="Xst" num="916" delta="old" >&quot;<arg fmt="%s" index="1">trafficNextState.v</arg>&quot; line <arg fmt="%d" index="2">70</arg>: Delay is ignored for synthesis.
-</msg>
-
-<msg type="warning" file="Xst" num="916" delta="old" >&quot;<arg fmt="%s" index="1">trafficNextState.v</arg>&quot; line <arg fmt="%d" index="2">78</arg>: Delay is ignored for synthesis.
-</msg>
-
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">traffic_state&lt;1&gt;</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">timer_reset</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">trafficNextState</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="info" file="Xst" num="2169" delta="new" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
-</msg>
-
 </messages>
-
