@@ -1,0 +1,29 @@
+Command line:
+   trafficNextState_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  41637
+
+Thu Nov 30 20:53:43 2023
+
+
+ Elaboration Time: 0.01 sec
+
+ Current Memory Usage: 183.636 Meg
+
+ Total Signals          : 22
+ Total Nets             : 21
+ Total Signal Drivers   : 12
+ Total Blocks           : 3
+ Total Primitive Blocks : 2
+ Total Processes        : 16
+ Total Traceable Variables  : 29
+ Total Scalar Nets and Variables : 117
+Total Line Count : 86
+
+ Total Simulation Time: 0.02 sec
+
+ Current Memory Usage: 259.138 Meg
+
+Thu Nov 30 20:54:32 2023
+

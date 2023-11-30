@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/csehome/jeehye/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficNextState_tb_isim_beh.exe" -prj "/csehome/jeehye/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficNextState_tb_beh.prj" "work.trafficNextState_tb" "work.glbl" 

@@ -1,0 +1,6 @@
+verilog work "counter_4bit.v"
+verilog work "trafficTimer.v"
+verilog work "trafficNextState.v"
+verilog work "trafficlightDecoder.v"
+verilog work "carSensorSync.v"
+verilog work "trafficController.v"
