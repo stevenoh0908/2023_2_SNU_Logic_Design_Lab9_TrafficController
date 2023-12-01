@@ -33,9 +33,11 @@ module trafficController(
 	 output [6:0] timer_seg_high,
 	 output [6:0] timer_seg_low,
 	 // DEBUGGING
-	 output tm_reset,
-	 output tm_country, output tm_yellow,
-	 output tm_carsync
+	 //output tm_reset,
+	 //output tm_country, output tm_yellow,
+	 //output tm_carsync, 
+	 output isClearing, 
+	 output check
     );
 
 	// init wires
@@ -52,8 +54,8 @@ module trafficController(
 
 	// init each modules
 	carSensorSync carsync(.car_async(car_async), .clock(clock), .reset(reset), .car_sync(car_sync));
-	trafficTimer timer(.clock(clock), .reset(reset), .load(1), .state(traffic_state), .car_sync(car_sync), .data_country(time_country), .data_yellow(time_yellow), .time_country(al_country), .time_yellow(al_yellow), .current_time(timer_BCD));
-	trafficNextState nextstate(.clock(clock), .reset(reset), .car_sync(car_sync), .time_country(al_country), .time_yellow(al_yellow), .traffic_state(traffic_state));
+	trafficTimer timer(.clock(clock), .reset(reset), .state(traffic_state), .car_sync(car_sync), .data_country(time_country), .data_yellow(time_yellow), .time_country(al_country), .time_yellow(al_yellow), .current_time(timer_BCD), .isClearing(isClearing));
+	trafficNextState nextstate(.clock(clock), .reset(reset), .car_sync(car_sync), .time_country(al_country), .time_yellow(al_yellow), .traffic_state(traffic_state), .check(check));
 	trafficlightDecoder decoder(.state(traffic_state),
 		.country_red(country_red),
 		.country_yellow(country_yellow),

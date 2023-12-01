@@ -1,2 +1,18 @@
-xst -intstyle ise -ifn "/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficController.xst" -ofn "/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficController.syr" 
-xst -intstyle ise -ifn "/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficController.xst" -ofn "/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficController.syr" 
+xst -intstyle ise -ifn "/csehome/jeehye/Downloads/2023_2_SNU_Logic_Design_Lab9_TrafficController-main/trafficController.xst" -ofn "/csehome/jeehye/Downloads/2023_2_SNU_Logic_Design_Lab9_TrafficController-main/trafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc SNU-UCF.ucf -p xc3s50an-tqg144-4 trafficController.ngc trafficController.ngd  
+map -intstyle ise -p xc3s50an-tqg144-4 -cm area -ir off -pr off -c 100 -o trafficController_map.ncd trafficController.ngd trafficController.pcf 
+par -w -intstyle ise -ol high -t 1 trafficController_map.ncd trafficController.ncd trafficController.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml trafficController.twx trafficController.ncd -o trafficController.twr trafficController.pcf -ucf SNU-UCF.ucf 
+bitgen -intstyle ise -f trafficController.ut trafficController.ncd 
+xst -intstyle ise -ifn "/csehome/jeehye/Downloads/2023_2_SNU_Logic_Design_Lab9_TrafficController-main/trafficController.xst" -ofn "/csehome/jeehye/Downloads/2023_2_SNU_Logic_Design_Lab9_TrafficController-main/trafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc SNU-UCF.ucf -p xc3s50an-tqg144-4 trafficController.ngc trafficController.ngd  
+map -intstyle ise -p xc3s50an-tqg144-4 -cm area -ir off -pr off -c 100 -o trafficController_map.ncd trafficController.ngd trafficController.pcf 
+par -w -intstyle ise -ol high -t 1 trafficController_map.ncd trafficController.ncd trafficController.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml trafficController.twx trafficController.ncd -o trafficController.twr trafficController.pcf -ucf SNU-UCF.ucf 
+bitgen -intstyle ise -f trafficController.ut trafficController.ncd 
+xst -intstyle ise -ifn "/csehome/jeehye/Downloads/2023_2_SNU_Logic_Design_Lab9_TrafficController-main/trafficController.xst" -ofn "/csehome/jeehye/Downloads/2023_2_SNU_Logic_Design_Lab9_TrafficController-main/trafficController.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc SNU-UCF.ucf -p xc3s50an-tqg144-4 trafficController.ngc trafficController.ngd  
+map -intstyle ise -p xc3s50an-tqg144-4 -cm area -ir off -pr off -c 100 -o trafficController_map.ncd trafficController.ngd trafficController.pcf 
+par -w -intstyle ise -ol high -t 1 trafficController_map.ncd trafficController.ncd trafficController.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml trafficController.twx trafficController.ncd -o trafficController.twr trafficController.pcf -ucf SNU-UCF.ucf 
+bitgen -intstyle ise -f trafficController.ut trafficController.ncd 

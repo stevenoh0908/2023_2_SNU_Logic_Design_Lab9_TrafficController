@@ -19,17 +19,16 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module counter_4bit(
-    input enable,
     input clock,
     input clear,
     output [3:0] out
     );
 
-	reg [3:0] cnt = 4'b0000;
+	reg [3:0] cnt;
 
 	always @(posedge clock or posedge clear) begin // async clear
 		if (clear) cnt <= 4'b0000;
-		else if (enable) begin
+		else begin
 			if (cnt == 4'b1111) cnt <= 4'b0000;
 			else cnt <= cnt + 1;
 		end

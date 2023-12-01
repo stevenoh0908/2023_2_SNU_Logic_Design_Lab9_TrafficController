@@ -21,14 +21,14 @@
 module trafficTimer(
 	 input clock,
     input reset,
-    input load,
     input [3:0] data_country,
     input [3:0] data_yellow,
 	 input [1:0] state,
 	 input car_sync,
     output reg time_country,
     output reg time_yellow,
-	 output [3:0] current_time
+	 output [3:0] current_time, 
+	 output reg isClearing
     );
 
 	parameter onesec_clockcount = 50000000;
@@ -47,16 +47,21 @@ module trafficTimer(
 	reg [3:0] reg_country;
 	reg [3:0] reg_yellow;
 	reg [31:0] clockcount;
+	//reg time_country_reg;
+	//reg time_yellow_reg;
+	
 	
 	// assign current_*
 	assign current_time = reg_counter;
+	assign counter_reset = to_reset || reset;
 	
-	counter_4bit timeCounter(.clock(count), .clear(counter_reset), .enable(1), .out(reg_counter));
+	//assign time_country = time_country_reg;
+	//assign time_yellow = time_yellow_reg;
 	
-	assign counter_reset = to_reset | reset;
+	counter_4bit timeCounter(.clock(count), .clear(counter_reset), .out(reg_counter));
 	
 	// clock counter 
-	always @(posedge clock or posedge counter_reset) begin
+	always @(posedge clock) begin
 		if (reset) clockcount <= 0;
 		else begin
 			clockcount <= clockcount + 1;
@@ -71,23 +76,32 @@ module trafficTimer(
 		end
 	end
 	
-	// loader (asynchronous load)
-	always @(posedge load) begin
-		reg_country <= data_country;
-		reg_yellow <= data_yellow;
-	end
 	
 	// reg_country, reg_yellow calculator
 	always @(reg_counter) begin
-		if (reg_counter >= reg_country) time_country <= 1;
-		else time_country <= 0;
-		if (reg_counter >= reg_yellow) time_yellow <= 1;
-		else time_yellow <= 0;
-		#20;
-		// timer reset?
+		to_reset = 0;
+		if (reg_counter > data_country-1) begin
+			isClearing = 1;
+			if (state == STATE_HG || state == STATE_SG) time_country = 1;
+			else time_country = 0;
+		end
+		else begin
+			isClearing = 0;
+			time_country = 0;
+		end
+		if (reg_counter > data_yellow-1) begin
+			isClearing = 1;
+			if (state == STATE_HY || state == STATE_SY) time_yellow = 1;
+			else time_yellow = 0;
+		end
+		else begin
+			time_yellow = 0;
+			isClearing = 0;
+		end
+
 		case (state)
 			STATE_HG: begin
-				if (car_sync | time_country) to_reset = 1;
+				if (car_sync && time_country) to_reset = 1;
 			end
 			STATE_HY: begin
 				if (time_yellow) to_reset = 1;
@@ -96,11 +110,9 @@ module trafficTimer(
 				if (time_country) to_reset = 1;
 			end
 			STATE_SY: begin
-				if (time_country) to_reset = 1;
+				if (time_yellow) to_reset = 1;
 			end
 		endcase
-		#20;
-		to_reset = 0;
-	end	
+	end
 
 endmodule
