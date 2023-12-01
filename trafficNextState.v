@@ -24,8 +24,7 @@ module trafficNextState(
     input car_sync,
     input time_country,
     input time_yellow,
-    output [1:0] traffic_state, 
-	 output reg check
+    output [1:0] traffic_state
     );
 
 	// state definitions
@@ -44,36 +43,30 @@ module trafficNextState(
 	always @(posedge clock) begin
 		if (reset) begin
 			state <= STATE_HG;
-			check= 1;
 		end
 		else begin
-			check=0;
 			case (state)
 				STATE_HG: begin
 					if (time_country && car_sync) begin
 						state <= STATE_HY;
-						check = 0;
 					end
 					else state <= STATE_HG;
 				end
 				STATE_HY: begin
 					if (time_yellow) begin
 						state <= STATE_SG;
-						check = 0;
 					end
 					else state <= STATE_HY;
 				end
 				STATE_SG: begin
 					if (time_country) begin
 						state <= STATE_SY;
-						check = 0;
 					end
 					else state <= STATE_SG;
 				end
 				STATE_SY: begin
 					if (time_yellow) begin
 						state <= STATE_HG;
-						check= 0;
 					end
 					else state <= STATE_SY;
 				end

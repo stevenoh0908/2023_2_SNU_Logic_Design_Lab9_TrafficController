@@ -1,8 +1,8 @@
 INTSTYLE=impact
-INFILE=/csehome/jeehye/Downloads/2023_2_SNU_Logic_Design_Lab9_TrafficController-main/impact.xsl
-OUTFILE=/csehome/jeehye/Downloads/2023_2_SNU_Logic_Design_Lab9_TrafficController-main/impact.xsl
+INFILE=/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/impact.xsl
+OUTFILE=/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/impact.xsl
 FAMILY=Single
 PART=Single
-WORKINGDIR=/csehome/jeehye/Downloads/2023_2_SNU_Logic_Design_Lab9_TrafficController-main
+WORKINGDIR=/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController
 LICENSE=iMPACT
 USER_INFO=iMPACT

@@ -9,29 +9,28 @@ Target Device  : xc3s50an
 Target Package : tqg144
 Target Speed   : -4
 Mapper Version : spartan3a -- $Revision: 1.55 $
-Mapped Date    : Fri Dec  1 17:18:05 2023
+Mapped Date    : Fri Dec  1 20:15:42 2023
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    0
 Logic Utilization:
-  Number of Slice Flip Flops:            40 out of   1,408    2%
-  Number of 4 input LUTs:                40 out of   1,408    2%
+  Number of Slice Flip Flops:            43 out of   1,408    3%
+  Number of 4 input LUTs:                36 out of   1,408    2%
 Logic Distribution:
-  Number of occupied Slices:             40 out of     704    5%
-    Number of Slices containing only related logic:      40 out of      40 100%
-    Number of Slices containing unrelated logic:          0 out of      40   0%
+  Number of occupied Slices:             38 out of     704    5%
+    Number of Slices containing only related logic:      38 out of      38 100%
+    Number of Slices containing unrelated logic:          0 out of      38   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:          71 out of   1,408    5%
-    Number used as logic:                40
+  Total Number of 4 input LUTs:          67 out of   1,408    4%
+    Number used as logic:                36
     Number used as a route-thru:         31
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
 
-  Number of bonded IOBs:                 33 out of     108   30%
-    IOB Flip Flops:                       1
+  Number of bonded IOBs:                 31 out of     108   28%
   Number of BUFGMUXs:                     1 out of      24    4%
 
 Average Fanout of Non-Clock Nets:                2.69
@@ -110,7 +109,6 @@ Section 6 - IOB Properties
 |                                    |                  |           |                      | Term  | Strength | Rate    |              |          | Delay    |                  |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | car_async                          | IBUF             | INPUT     | LVCMOS25             |       |          |         |              |          | 0 / 0    |                  |
-| check                              | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    | OFF1         |          | 0 / 0    | 3STATE           |
 | clock                              | IBUF             | INPUT     | LVCMOS25             |       |          |         |              |          | 0 / 0    |                  |
 | country_green                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
 | country_red                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
@@ -118,7 +116,6 @@ Section 6 - IOB Properties
 | highway_green                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
 | highway_red                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
 | highway_yellow                     | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
-| isClearing                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW    |              |          | 0 / 0    | 3STATE           |
 | reset                              | IBUF             | INPUT     | LVCMOS25             |       |          |         |              |          | 0 / 0    |                  |
 | time_country<0>                    | IBUF             | INPUT     | LVCMOS25             |       |          |         |              |          | 0 / 0    |                  |
 | time_country<1>                    | IBUF             | INPUT     | LVCMOS25             |       |          |         |              |          | 0 / 0    |                  |

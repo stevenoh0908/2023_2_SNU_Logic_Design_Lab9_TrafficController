@@ -171,8 +171,6 @@ Analyzing module <trafficTimer> in library <work>.
 	STATE_SG = 2'b11
 	STATE_SY = 2'b10
 	onesec_clockcount = 32'sb00000010111110101111000010000000
-WARNING:Xst:905 - "trafficTimer.v" line 81: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-   <data_country>, <state>, <data_yellow>, <car_sync>, <time_country>, <time_yellow>
 Module <trafficTimer> is correct for synthesis.
  
 Analyzing module <counter_4bit> in library <work>.
@@ -225,10 +223,8 @@ Synthesizing Unit <trafficNextState>.
     | Encoding           | automatic                                      |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 1-bit register for signal <check>.
     Summary:
 	inferred   1 Finite State Machine(s).
-	inferred   1 D-type flip-flop(s).
 Unit <trafficNextState> synthesized.
 
 
@@ -260,28 +256,27 @@ Synthesizing Unit <trafficTimer>.
     Related source file is "trafficTimer.v".
 WARNING:Xst:1780 - Signal <reg_yellow> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1780 - Signal <reg_country> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-    Found 6-bit subtractor for signal <$sub0000> created at line 83.
-    Found 6-bit subtractor for signal <$sub0001> created at line 92.
+    Found 4x1-bit ROM for signal <time_country$mux0000>.
+    Found 1-bit register for signal <time_yellow>.
+    Found 1-bit register for signal <time_country>.
     Found 32-bit up counter for signal <clockcount>.
     Found 1-bit register for signal <count>.
-    Found 6-bit comparator greater for signal <old_time_country_1$cmp_gt0000> created at line 83.
-    Found 6-bit comparator greater for signal <old_time_yellow_2$cmp_gt0000> created at line 92.
-    Found 1-bit 4-to-1 multiplexer for signal <to_reset>.
+    Found 4-bit comparator greatequal for signal <old_time_country_1$cmp_ge0000> created at line 78.
+    Found 4-bit comparator greatequal for signal <old_time_yellow_2$cmp_ge0000> created at line 86.
+    Found 4-bit comparator less for signal <time_yellow$cmp_lt0000> created at line 86.
+    Found 1-bit register for signal <to_reset>.
+    Found 1-bit 4-to-1 multiplexer for signal <to_reset$mux0000> created at line 94.
     Summary:
+	inferred   1 ROM(s).
 	inferred   1 Counter(s).
-	inferred   1 D-type flip-flop(s).
-	inferred   2 Adder/Subtractor(s).
-	inferred   2 Comparator(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   3 Comparator(s).
 	inferred   1 Multiplexer(s).
 Unit <trafficTimer> synthesized.
 
 
 Synthesizing Unit <trafficController>.
     Related source file is "trafficController.v".
-WARNING:Xst:646 - Signal <tm_yellow> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <tm_reset> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <tm_country> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <tm_carsync> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 Unit <trafficController> synthesized.
 
 
@@ -289,18 +284,18 @@ Unit <trafficController> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# ROMs                                                 : 2
+# ROMs                                                 : 3
  16x14-bit ROM                                         : 1
+ 4x1-bit ROM                                           : 1
  4x6-bit ROM                                           : 1
-# Adders/Subtractors                                   : 2
- 6-bit subtractor                                      : 2
 # Counters                                             : 2
  32-bit up counter                                     : 1
  4-bit up counter                                      : 1
-# Registers                                            : 3
- 1-bit register                                        : 3
-# Comparators                                          : 2
- 6-bit comparator greater                              : 2
+# Registers                                            : 5
+ 1-bit register                                        : 5
+# Comparators                                          : 3
+ 4-bit comparator greatequal                           : 2
+ 4-bit comparator less                                 : 1
 # Multiplexers                                         : 1
  1-bit 4-to-1 multiplexer                              : 1
 
@@ -321,23 +316,27 @@ Optimizing FSM <nextstate/state/FSM> on signal <state[1:2]> with user encoding.
  10    | 10
 -------------------
 
+Synthesizing (advanced) Unit <trafficTimer>.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom_time_country_mux0000> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+Unit <trafficTimer> synthesized (advanced).
+
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
 # FSMs                                                 : 1
-# ROMs                                                 : 2
+# ROMs                                                 : 3
  16x14-bit ROM                                         : 1
+ 4x1-bit ROM                                           : 1
  4x6-bit ROM                                           : 1
-# Adders/Subtractors                                   : 2
- 6-bit subtractor                                      : 2
 # Counters                                             : 2
  32-bit up counter                                     : 1
  4-bit up counter                                      : 1
-# Registers                                            : 3
- Flip-Flops                                            : 3
-# Comparators                                          : 2
- 6-bit comparator greater                              : 2
+# Registers                                            : 5
+ Flip-Flops                                            : 5
+# Comparators                                          : 3
+ 4-bit comparator greatequal                           : 2
+ 4-bit comparator less                                 : 1
 # Multiplexers                                         : 1
  1-bit 4-to-1 multiplexer                              : 1
 
@@ -353,7 +352,7 @@ Optimizing unit <trafficTimer> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block trafficController, actual ratio is 6.
+Found area constraint ratio of 100 (+ 5) on block trafficController, actual ratio is 5.
 
 Final Macro Processing ...
 
@@ -361,8 +360,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 41
- Flip-Flops                                            : 41
+# Registers                                            : 43
+ Flip-Flops                                            : 43
 
 =========================================================================
 
@@ -388,30 +387,31 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 33
+# IOs                              : 31
 
 Cell Usage :
-# BELS                             : 147
+# BELS                             : 145
 #      GND                         : 1
 #      INV                         : 3
 #      LUT1                        : 31
-#      LUT2                        : 5
-#      LUT3                        : 7
-#      LUT4                        : 27
+#      LUT2                        : 7
+#      LUT3                        : 4
+#      LUT4                        : 24
 #      MUXCY                       : 39
-#      MUXF5                       : 1
+#      MUXF5                       : 3
 #      VCC                         : 1
 #      XORCY                       : 32
-# FlipFlops/Latches                : 41
+# FlipFlops/Latches                : 43
+#      FD                          : 1
 #      FDC                         : 5
 #      FDE                         : 1
-#      FDR                         : 34
+#      FDR                         : 35
 #      FDRE                        : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 32
+# IO Buffers                       : 30
 #      IBUF                        : 10
-#      OBUF                        : 22
+#      OBUF                        : 20
 =========================================================================
 
 Device utilization summary:
@@ -419,12 +419,11 @@ Device utilization summary:
 
 Selected Device : 3s50antqg144-4 
 
- Number of Slices:                       39  out of    704     5%  
- Number of Slice Flip Flops:             40  out of   1408     2%  
- Number of 4 input LUTs:                 73  out of   1408     5%  
- Number of IOs:                          33
- Number of bonded IOBs:                  33  out of    108    30%  
-    IOB Flip Flops:                       1
+ Number of Slices:                       36  out of    704     5%  
+ Number of Slice Flip Flops:             43  out of   1408     3%  
+ Number of 4 input LUTs:                 69  out of   1408     4%  
+ Number of IOs:                          31
+ Number of bonded IOBs:                  31  out of    108    28%  
  Number of GCLKs:                         1  out of     24     4%  
 
 ---------------------------
@@ -448,28 +447,28 @@ Clock Information:
 -----------------------------------+------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)        | Load  |
 -----------------------------------+------------------------------+-------+
-clock                              | BUFGP                        | 37    |
+clock                              | BUFGP                        | 39    |
 timer/count                        | NONE(timer/timeCounter/cnt_3)| 4     |
 -----------------------------------+------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
-------------------------------------------+------------------------------+-------+
-Control Signal                            | Buffer(FF name)              | Load  |
-------------------------------------------+------------------------------+-------+
-timer/counter_reset(timer/counter_reset:O)| NONE(timer/timeCounter/cnt_0)| 4     |
-reset                                     | IBUF                         | 1     |
-------------------------------------------+------------------------------+-------+
+-------------------------------------------+------------------------------+-------+
+Control Signal                             | Buffer(FF name)              | Load  |
+-------------------------------------------+------------------------------+-------+
+timer/counter_reset(timer/counter_reset1:O)| NONE(timer/timeCounter/cnt_0)| 4     |
+reset                                      | IBUF                         | 1     |
+-------------------------------------------+------------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -4
 
    Minimum period: 6.293ns (Maximum Frequency: 158.901MHz)
-   Minimum input arrival time before clock: 7.694ns
-   Maximum output required time after clock: 10.879ns
-   Maximum combinational path delay: 10.664ns
+   Minimum input arrival time before clock: 5.963ns
+   Maximum output required time after clock: 7.472ns
+   Maximum combinational path delay: No path found
 
 Timing Detail:
 --------------
@@ -478,7 +477,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clock'
   Clock period: 6.293ns (frequency: 158.901MHz)
-  Total number of paths / destination ports: 1590 / 68
+  Total number of paths / destination ports: 1598 / 71
 -------------------------------------------------------------------------
 Delay:               6.293ns (Levels of Logic = 10)
   Source:            timer/clockcount_22 (FF)
@@ -530,33 +529,32 @@ Delay:               2.894ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
-  Total number of paths / destination ports: 60 / 39
+  Total number of paths / destination ports: 78 / 39
 -------------------------------------------------------------------------
-Offset:              7.694ns (Levels of Logic = 6)
+Offset:              5.963ns (Levels of Logic = 5)
   Source:            time_yellow<0> (PAD)
-  Destination:       nextstate/state_FSM_FFd1 (FF)
+  Destination:       timer/time_yellow (FF)
   Destination Clock: clock rising
 
-  Data Path: time_yellow<0> to nextstate/state_FSM_FFd1
+  Data Path: time_yellow<0> to timer/time_yellow
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             4   0.849   0.730  time_yellow_0_IBUF (time_yellow_0_IBUF)
-     LUT4:I0->O            1   0.648   0.452  timer/isClearing280_SW1 (N22)
-     LUT4:I2->O            1   0.648   0.500  timer/isClearing280 (timer/isClearing280)
-     LUT3:I1->O            1   0.643   0.500  timer/isClearing2154_SW0 (N16)
-     LUT4:I1->O            3   0.643   0.674  timer/isClearing2154 (isClearing_OBUF)
-     LUT3:I0->O            2   0.648   0.447  timer/counter_reset_SW0 (al_yellow)
-     FDRE:CE                   0.312          nextstate/state_FSM_FFd1
+     IBUF:I->O             1   0.849   0.452  time_yellow_0_IBUF (time_yellow_0_IBUF)
+     LUT4:I2->O            2   0.648   0.590  timer/old_time_yellow_2_cmp_ge00002 (timer/old_time_yellow_2_cmp_ge00001)
+     LUT4:I0->O            1   0.648   0.000  timer/old_time_yellow_2_cmp_ge000012 (timer/old_time_yellow_2_cmp_ge000012)
+     MUXF5:I0->O           3   0.276   0.563  timer/old_time_yellow_2_cmp_ge00001_f5 (timer/old_time_yellow_2_cmp_ge0000)
+     LUT3:I2->O            1   0.648   0.420  timer/time_yellow_or00001 (timer/time_yellow_or0000)
+     FDR:R                     0.869          timer/time_yellow
     ----------------------------------------
-    Total                      7.694ns (4.391ns logic, 3.303ns route)
-                                       (57.1% logic, 42.9% route)
+    Total                      5.963ns (3.938ns logic, 2.025ns route)
+                                       (66.0% logic, 34.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
-  Total number of paths / destination ports: 13 / 7
+  Total number of paths / destination ports: 12 / 6
 -------------------------------------------------------------------------
-Offset:              7.057ns (Levels of Logic = 2)
+Offset:              7.169ns (Levels of Logic = 2)
   Source:            nextstate/state_FSM_FFd2 (FF)
   Destination:       country_green (PAD)
   Source Clock:      clock rising
@@ -565,70 +563,45 @@ Offset:              7.057ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              7   0.591   0.851  nextstate/state_FSM_FFd2 (nextstate/state_FSM_FFd2)
+     FDR:C->Q              9   0.591   0.963  nextstate/state_FSM_FFd2 (nextstate/state_FSM_FFd2)
      LUT2:I0->O            2   0.648   0.447  country_red1 (country_red_OBUF)
      OBUF:I->O                 4.520          country_red_OBUF (country_red)
     ----------------------------------------
-    Total                      7.057ns (5.759ns logic, 1.298ns route)
-                                       (81.6% logic, 18.4% route)
+    Total                      7.169ns (5.759ns logic, 1.410ns route)
+                                       (80.3% logic, 19.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'timer/count'
-  Total number of paths / destination ports: 47 / 12
+  Total number of paths / destination ports: 40 / 11
 -------------------------------------------------------------------------
-Offset:              10.879ns (Levels of Logic = 5)
-  Source:            timer/timeCounter/cnt_2 (FF)
-  Destination:       isClearing (PAD)
+Offset:              7.472ns (Levels of Logic = 2)
+  Source:            timer/timeCounter/cnt_3 (FF)
+  Destination:       timer_seg_high<6> (PAD)
   Source Clock:      timer/count rising
 
-  Data Path: timer/timeCounter/cnt_2 to isClearing
+  Data Path: timer/timeCounter/cnt_3 to timer_seg_high<6>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             15   0.591   1.160  timer/timeCounter/cnt_2 (timer/timeCounter/cnt_2)
-     LUT3:I0->O            1   0.648   0.500  timer/isClearing280_SW0 (N20)
-     LUT4:I1->O            1   0.643   0.500  timer/isClearing280 (timer/isClearing280)
-     LUT3:I1->O            1   0.643   0.500  timer/isClearing2154_SW0 (N16)
-     LUT4:I1->O            3   0.643   0.531  timer/isClearing2154 (isClearing_OBUF)
-     OBUF:I->O                 4.520          isClearing_OBUF (isClearing)
+     FDC:C->Q             13   0.591   1.126  timer/timeCounter/cnt_3 (timer/timeCounter/cnt_3)
+     LUT3:I0->O            4   0.648   0.587  timer_seg_high<6>1 (timer_seg_high_6_OBUF)
+     OBUF:I->O                 4.520          timer_seg_high_6_OBUF (timer_seg_high<6>)
     ----------------------------------------
-    Total                     10.879ns (7.688ns logic, 3.191ns route)
-                                       (70.7% logic, 29.3% route)
-
-=========================================================================
-Timing constraint: Default path analysis
-  Total number of paths / destination ports: 13 / 1
--------------------------------------------------------------------------
-Delay:               10.664ns (Levels of Logic = 6)
-  Source:            time_yellow<0> (PAD)
-  Destination:       isClearing (PAD)
-
-  Data Path: time_yellow<0> to isClearing
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O             4   0.849   0.730  time_yellow_0_IBUF (time_yellow_0_IBUF)
-     LUT4:I0->O            1   0.648   0.452  timer/isClearing280_SW1 (N22)
-     LUT4:I2->O            1   0.648   0.500  timer/isClearing280 (timer/isClearing280)
-     LUT3:I1->O            1   0.643   0.500  timer/isClearing2154_SW0 (N16)
-     LUT4:I1->O            3   0.643   0.531  timer/isClearing2154 (isClearing_OBUF)
-     OBUF:I->O                 4.520          isClearing_OBUF (isClearing)
-    ----------------------------------------
-    Total                     10.664ns (7.951ns logic, 2.713ns route)
-                                       (74.6% logic, 25.4% route)
+    Total                      7.472ns (5.759ns logic, 1.713ns route)
+                                       (77.1% logic, 22.9% route)
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 2.72 secs
+Total CPU time to Xst completion: 2.63 secs
  
 --> 
 
 
-Total memory usage is 502172 kilobytes
+Total memory usage is 501608 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    7 (   0 filtered)
-Number of infos    :    1 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
 

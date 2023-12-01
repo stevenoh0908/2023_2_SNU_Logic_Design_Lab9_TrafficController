@@ -32,6 +32,3 @@ NET "timer_seg_low[3]" LOC = P82;
 NET "timer_seg_low[2]" LOC = P83;
 NET "timer_seg_low[1]" LOC = P84;
 NET "timer_seg_low[0]" LOC = P85;
-
-NET "isClearing" LOC = P55;
-NET "check" LOC = P58;

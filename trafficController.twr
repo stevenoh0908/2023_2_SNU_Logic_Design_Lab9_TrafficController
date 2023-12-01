@@ -45,16 +45,16 @@ Setup/Hold to clock clock
                |Max Setup to|Max Hold to |                  | Clock  |
 Source         | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ---------------+------------+------------+------------------+--------+
-car_async      |    1.166(R)|   -0.133(R)|clock_BUFGP       |   0.000|
-reset          |    4.174(R)|    0.111(R)|clock_BUFGP       |   0.000|
-time_country<0>|    4.491(R)|   -2.577(R)|clock_BUFGP       |   0.000|
-time_country<1>|    5.380(R)|   -2.471(R)|clock_BUFGP       |   0.000|
-time_country<2>|    4.850(R)|   -2.462(R)|clock_BUFGP       |   0.000|
-time_country<3>|    4.637(R)|   -2.029(R)|clock_BUFGP       |   0.000|
-time_yellow<0> |    6.333(R)|   -2.760(R)|clock_BUFGP       |   0.000|
-time_yellow<1> |    6.034(R)|   -2.625(R)|clock_BUFGP       |   0.000|
-time_yellow<2> |    5.865(R)|   -3.198(R)|clock_BUFGP       |   0.000|
-time_yellow<3> |    4.340(R)|   -1.624(R)|clock_BUFGP       |   0.000|
+car_async      |    0.800(R)|    0.158(R)|clock_BUFGP       |   0.000|
+reset          |    3.087(R)|   -0.903(R)|clock_BUFGP       |   0.000|
+time_country<0>|    5.462(R)|   -3.256(R)|clock_BUFGP       |   0.000|
+time_country<1>|    5.135(R)|   -2.994(R)|clock_BUFGP       |   0.000|
+time_country<2>|    4.201(R)|   -2.283(R)|clock_BUFGP       |   0.000|
+time_country<3>|    3.920(R)|   -2.058(R)|clock_BUFGP       |   0.000|
+time_yellow<0> |    5.709(R)|   -2.863(R)|clock_BUFGP       |   0.000|
+time_yellow<1> |    5.695(R)|   -2.851(R)|clock_BUFGP       |   0.000|
+time_yellow<2> |    4.914(R)|   -2.238(R)|clock_BUFGP       |   0.000|
+time_yellow<3> |    4.708(R)|   -2.088(R)|clock_BUFGP       |   0.000|
 ---------------+------------+------------+------------------+--------+
 
 Clock clock to Pad
@@ -62,13 +62,12 @@ Clock clock to Pad
               | clk (edge) |                  | Clock  |
 Destination   |   to PAD   |Internal Clock(s) | Phase  |
 --------------+------------+------------------+--------+
-check         |    6.059(R)|clock_BUFGP       |   0.000|
-country_green |    9.157(R)|clock_BUFGP       |   0.000|
-country_red   |    9.215(R)|clock_BUFGP       |   0.000|
-country_yellow|    9.394(R)|clock_BUFGP       |   0.000|
-highway_green |    9.486(R)|clock_BUFGP       |   0.000|
-highway_red   |    9.693(R)|clock_BUFGP       |   0.000|
-highway_yellow|    9.407(R)|clock_BUFGP       |   0.000|
+country_green |    9.350(R)|clock_BUFGP       |   0.000|
+country_red   |    8.785(R)|clock_BUFGP       |   0.000|
+country_yellow|    8.958(R)|clock_BUFGP       |   0.000|
+highway_green |    9.092(R)|clock_BUFGP       |   0.000|
+highway_red   |    9.611(R)|clock_BUFGP       |   0.000|
+highway_yellow|    9.252(R)|clock_BUFGP       |   0.000|
 --------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clock
@@ -76,21 +75,11 @@ Clock to Setup on destination clock clock
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clock          |    6.559|         |         |         |
+clock          |    5.743|         |         |         |
 ---------------+---------+---------+---------+---------+
 
-Pad to Pad
----------------+---------------+---------+
-Source Pad     |Destination Pad|  Delay  |
----------------+---------------+---------+
-time_yellow<0> |isClearing     |   10.826|
-time_yellow<1> |isClearing     |   10.527|
-time_yellow<2> |isClearing     |   10.358|
-time_yellow<3> |isClearing     |    8.833|
----------------+---------------+---------+
 
-
-Analysis completed Fri Dec  1 17:18:16 2023 
+Analysis completed Fri Dec  1 20:15:51 2023 
 --------------------------------------------------------------------------------
 
 Trace Settings:

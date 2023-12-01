@@ -1,7 +1,7 @@
 #Release 14.7 - par P.20131013 (lin64)
 #Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-#Fri Dec  1 17:18:13 2023
+#Fri Dec  1 20:15:50 2023
 
 #
 ## NOTE: This file is designed to be imported into a spreadsheet program
@@ -73,10 +73,10 @@ P51,,DIFFSTB,IO_L07N_2/D4,UNUSED,,2,,,,,,,,,
 P52,,,VCCINT,,,,,,,,1.2,,,,
 P53,,IBUF,IP_2/VREF_2,UNUSED,,2,,,,,,,,,
 P54,,DIFFMTB,IO_L08P_2/GCLK14,UNUSED,,2,,,,,,,,,
-P55,isClearing,IOB,IO_L08N_2/GCLK15,OUTPUT,LVCMOS25*,2,12,SLOW,NONE**,,,LOCATED,NO,NONE,
+P55,,DIFFSTB,IO_L08N_2/GCLK15,UNUSED,,2,,,,,,,,,
 P56,,,GND,,,,,,,,,,,,
 P57,clock,IBUF,IO_L09P_2/GCLK0,INPUT,LVCMOS25*,2,,,,IBUF,,LOCATED,NO,NONE,
-P58,check,IOB,IO_L10P_2/GCLK2,OUTPUT,LVCMOS25*,2,12,SLOW,NONE**,,,LOCATED,YES,NONE,
+P58,,DIFFMTB,IO_L10P_2/GCLK2,UNUSED,,2,,,,,,,,,
 P59,,DIFFSTB,IO_L09N_2/GCLK1,UNUSED,,2,,,,,,,,,
 P60,,DIFFSTB,IO_L10N_2/GCLK3,UNUSED,,2,,,,,,,,,
 P61,,,VCCO_2,,,2,,,,,2.50,,,,

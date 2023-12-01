@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Map" timeStamp="Fri Dec  1 17:18:07 2023">
+  <application stringID="Map" timeStamp="Fri Dec  1 20:15:44 2023">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -43,13 +43,13 @@
         <item stringID="User_EnvOsname" value="Debian"/>
         <item stringID="User_EnvOsrelease" value="Debian GNU/Linux 12 (bookworm)"/>
       </item>
-      <item stringID="User_EnvHost" value="310-2-18"/>
+      <item stringID="User_EnvHost" value="310-2-15"/>
       <table stringID="User_EnvCpu">
         <column stringID="arch"/>
         <column stringID="speed"/>
         <row stringID="row" value="0">
           <item stringID="arch" value="Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz"/>
-          <item stringID="speed" value="3940.066 MHz"/>
+          <item stringID="speed" value="3979.425 MHz"/>
         </row>
       </table>
     </section>
@@ -73,23 +73,22 @@
         <item dataType="int" stringID="MAP_NUM_ERRORS" value="0"/>
         <item dataType="int" stringID="MAP_FILTERED_WARNINGS" value="0"/>
         <item dataType="int" stringID="MAP_NUM_WARNINGS" value="0"/>
-        <item UNITS="KB" dataType="int" stringID="MAP_PEAK_MEMORY" value="612572"/>
+        <item UNITS="KB" dataType="int" stringID="MAP_PEAK_MEMORY" value="612548"/>
         <item stringID="MAP_TOTAL_REAL_TIME" value="1 secs "/>
         <item stringID="MAP_TOTAL_CPU_TIME" value="1 secs "/>
       </section>
       <section stringID="MAP_SLICE_REPORTING">
-        <item AVAILABLE="1408" dataType="int" label="Number of Slice Flip Flops" stringID="MAP_NUM_SLICE_FF" value="40"/>
-        <item AVAILABLE="1408" dataType="int" label="Number of 4 input LUTs" stringID="MAP_NUM_4_INPUT_LUT" value="71">
+        <item AVAILABLE="1408" dataType="int" label="Number of Slice Flip Flops" stringID="MAP_NUM_SLICE_FF" value="43"/>
+        <item AVAILABLE="1408" dataType="int" label="Number of 4 input LUTs" stringID="MAP_NUM_4_INPUT_LUT" value="67">
           <item dataType="int" label="Number of route-thrus" stringID="MAP_NUM_LUT_RT" value="31"/>
         </item>
-        <item AVAILABLE="704" dataType="int" label="Number of occupied Slices" stringID="MAP_OCCUPIED_SLICES" value="40">
+        <item AVAILABLE="704" dataType="int" label="Number of occupied Slices" stringID="MAP_OCCUPIED_SLICES" value="38">
           <item dataType="int" label="Number of Slices containing unrelated logic" stringID="MAP_NUM_SLICE_UNRELATED" value="0"/>
         </item>
       </section>
       <section stringID="MAP_IOB_REPORTING">
         <section stringID="MAP_IOB_DATA">
-          <item AVAILABLE="108" dataType="int" stringID="MAP_AGG_BONDED_IO" value="33"/>
-          <item AVAILABLE="0" dataType="int" label="IOB Flip Flops" stringID="MAP_NUM_IOB_FF" value="1"/>
+          <item AVAILABLE="108" dataType="int" stringID="MAP_AGG_BONDED_IO" value="31"/>
         </section>
       </section>
       <section stringID="MAP_HARD_IP_REPORTING">
@@ -120,24 +119,13 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
           </row>
           <row stringID="row" value="2">
-            <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="check"/>
-            <item stringID="Type" value="IOB"/>
-            <item stringID="Direction" value="OUTPUT"/>
-            <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
-            <item label="Drive&#xA;Strength" stringID="DRIVE_STRENGTH" value="12"/>
-            <item label="Slew&#xA;Rate" stringID="SLEW_RATE" value="SLOW"/>
-            <item label="Reg&#xA;(s)" stringID="REGS" value="OFF1"/>
-            <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
-            <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
-          </row>
-          <row stringID="row" value="3">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="clock"/>
             <item stringID="Type" value="IBUF"/>
             <item stringID="Direction" value="INPUT"/>
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
           </row>
-          <row stringID="row" value="4">
+          <row stringID="row" value="3">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="country_green"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -147,7 +135,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="5">
+          <row stringID="row" value="4">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="country_red"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -157,7 +145,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="6">
+          <row stringID="row" value="5">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="country_yellow"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -167,7 +155,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="7">
+          <row stringID="row" value="6">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="highway_green"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -177,7 +165,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="8">
+          <row stringID="row" value="7">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="highway_red"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -187,7 +175,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="9">
+          <row stringID="row" value="8">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="highway_yellow"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -197,80 +185,70 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="10">
-            <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="isClearing"/>
-            <item stringID="Type" value="IOB"/>
-            <item stringID="Direction" value="OUTPUT"/>
-            <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
-            <item label="Drive&#xA;Strength" stringID="DRIVE_STRENGTH" value="12"/>
-            <item label="Slew&#xA;Rate" stringID="SLEW_RATE" value="SLOW"/>
-            <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
-            <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
-          </row>
-          <row stringID="row" value="11">
+          <row stringID="row" value="9">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="reset"/>
             <item stringID="Type" value="IBUF"/>
             <item stringID="Direction" value="INPUT"/>
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
           </row>
-          <row stringID="row" value="12">
+          <row stringID="row" value="10">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="time_country&lt;0>"/>
             <item stringID="Type" value="IBUF"/>
             <item stringID="Direction" value="INPUT"/>
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
           </row>
-          <row stringID="row" value="13">
+          <row stringID="row" value="11">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="time_country&lt;1>"/>
             <item stringID="Type" value="IBUF"/>
             <item stringID="Direction" value="INPUT"/>
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
           </row>
-          <row stringID="row" value="14">
+          <row stringID="row" value="12">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="time_country&lt;2>"/>
             <item stringID="Type" value="IBUF"/>
             <item stringID="Direction" value="INPUT"/>
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
           </row>
-          <row stringID="row" value="15">
+          <row stringID="row" value="13">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="time_country&lt;3>"/>
             <item stringID="Type" value="IBUF"/>
             <item stringID="Direction" value="INPUT"/>
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
           </row>
-          <row stringID="row" value="16">
+          <row stringID="row" value="14">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="time_yellow&lt;0>"/>
             <item stringID="Type" value="IBUF"/>
             <item stringID="Direction" value="INPUT"/>
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
           </row>
-          <row stringID="row" value="17">
+          <row stringID="row" value="15">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="time_yellow&lt;1>"/>
             <item stringID="Type" value="IBUF"/>
             <item stringID="Direction" value="INPUT"/>
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
           </row>
-          <row stringID="row" value="18">
+          <row stringID="row" value="16">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="time_yellow&lt;2>"/>
             <item stringID="Type" value="IBUF"/>
             <item stringID="Direction" value="INPUT"/>
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
           </row>
-          <row stringID="row" value="19">
+          <row stringID="row" value="17">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="time_yellow&lt;3>"/>
             <item stringID="Type" value="IBUF"/>
             <item stringID="Direction" value="INPUT"/>
             <item label="IO&#xA;Standard" sort="smart" stringID="IO_STANDARD" value="LVCMOS25"/>
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
           </row>
-          <row stringID="row" value="20">
+          <row stringID="row" value="18">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="timer_seg_high&lt;0>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -280,7 +258,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="21">
+          <row stringID="row" value="19">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="timer_seg_high&lt;1>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -290,7 +268,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="22">
+          <row stringID="row" value="20">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="timer_seg_high&lt;2>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -300,7 +278,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="23">
+          <row stringID="row" value="21">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="timer_seg_high&lt;3>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -310,7 +288,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="24">
+          <row stringID="row" value="22">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="timer_seg_high&lt;4>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -320,7 +298,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="25">
+          <row stringID="row" value="23">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="timer_seg_high&lt;5>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -330,7 +308,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="26">
+          <row stringID="row" value="24">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="timer_seg_high&lt;6>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -340,7 +318,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="27">
+          <row stringID="row" value="25">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="timer_seg_low&lt;0>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -350,7 +328,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="28">
+          <row stringID="row" value="26">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="timer_seg_low&lt;1>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -360,7 +338,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="29">
+          <row stringID="row" value="27">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="timer_seg_low&lt;2>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -370,7 +348,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="30">
+          <row stringID="row" value="28">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="timer_seg_low&lt;3>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -380,7 +358,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="31">
+          <row stringID="row" value="29">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="timer_seg_low&lt;4>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -390,7 +368,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="32">
+          <row stringID="row" value="30">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="timer_seg_low&lt;5>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>
@@ -400,7 +378,7 @@
             <item label="IBUF/IFD&#xA;Delay" stringID="IBUF_IFD_DELAY" value="0 / 0"/>
             <item label="Suspend" stringID="SUSPEND" value="3STATE"/>
           </row>
-          <row stringID="row" value="33">
+          <row stringID="row" value="31">
             <item label="IOB&#xA;Name" sort="smart" stringID="IOB_NAME" value="timer_seg_low&lt;6>"/>
             <item stringID="Type" value="IOB"/>
             <item stringID="Direction" value="OUTPUT"/>

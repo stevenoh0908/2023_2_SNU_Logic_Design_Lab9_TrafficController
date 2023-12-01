@@ -6,8 +6,8 @@ ise -dd _ngo -nt timestamp -uc SNU-UCF.ucf -p xc3s50an-tqg144-4
 trafficController.ngc trafficController.ngd
 
 Reading NGO file
-"/csehome/jeehye/Downloads/2023_2_SNU_Logic_Design_Lab9_TrafficController-main/t
-rafficController.ngc" ...
+"/csehome/stevenoh0908/2023_2_SNU_Logic_Design_Lab9_TrafficController/trafficCon
+troller.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -29,7 +29,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 385028 kilobytes
+Total memory usage is 385008 kilobytes
 
 Writing NGD file "trafficController.ngd" ...
 Total REAL time to NGDBUILD completion:  1 sec

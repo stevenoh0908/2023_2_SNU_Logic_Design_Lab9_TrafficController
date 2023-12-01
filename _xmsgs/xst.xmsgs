@@ -5,29 +5,16 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="Xst" num="905" delta="old" >&quot;<arg fmt="%s" index="1">trafficTimer.v</arg>&quot; line <arg fmt="%d" index="2">81</arg>: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
-<arg fmt="%s" index="3">&lt;data_country&gt;, &lt;state&gt;, &lt;data_yellow&gt;, &lt;car_sync&gt;, &lt;time_country&gt;, &lt;time_yellow&gt;</arg>
+<msg type="warning" file="Xst" num="1780" delta="new" >Signal &lt;<arg fmt="%s" index="1">reg_yellow</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">reg_yellow</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1780" delta="new" >Signal &lt;<arg fmt="%s" index="1">reg_country</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1780" delta="old" >Signal &lt;<arg fmt="%s" index="1">reg_country</arg>&gt; is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+<msg type="info" file="Xst" num="3034" delta="new" >In order to maximize performance and save block RAM resources, the small ROM &lt;<arg fmt="%s" index="1">Mrom_time_country_mux0000</arg>&gt; will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
 </msg>
 
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">tm_yellow</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">tm_reset</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">tm_country</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">tm_carsync</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-</msg>
-
-<msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+<msg type="info" file="Xst" num="2169" delta="new" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 </msg>
 
 </messages>

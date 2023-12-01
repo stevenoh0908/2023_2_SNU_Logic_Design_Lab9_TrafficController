@@ -27,8 +27,7 @@ module trafficTimer(
 	 input car_sync,
     output reg time_country,
     output reg time_yellow,
-	 output [3:0] current_time, 
-	 output reg isClearing
+	 output [3:0] current_time
     );
 
 	parameter onesec_clockcount = 50000000;
@@ -47,16 +46,11 @@ module trafficTimer(
 	reg [3:0] reg_country;
 	reg [3:0] reg_yellow;
 	reg [31:0] clockcount;
-	//reg time_country_reg;
-	//reg time_yellow_reg;
 	
 	
 	// assign current_*
 	assign current_time = reg_counter;
 	assign counter_reset = to_reset || reset;
-	
-	//assign time_country = time_country_reg;
-	//assign time_yellow = time_yellow_reg;
 	
 	counter_4bit timeCounter(.clock(count), .clear(counter_reset), .out(reg_counter));
 	
@@ -77,26 +71,24 @@ module trafficTimer(
 	end
 	
 	
-	// reg_country, reg_yellow calculator
-	always @(reg_counter) begin
+	// reg_country, reg_yellow calculator (modified on 1 Dec 2023, made circuit sync with clock)
+	// this was the problem. (Yooshin Oh, 1 Dec 2023, 20:00)
+	always @(posedge clock) begin
 		to_reset = 0;
-		if (reg_counter > data_country-1) begin
-			isClearing = 1;
-			if (state == STATE_HG || state == STATE_SG) time_country = 1;
+		if (reg_counter >= data_country) begin
+			if (state == STATE_HG) time_country = 1;
+			else if (state == STATE_SG) time_country = 1;
 			else time_country = 0;
 		end
 		else begin
-			isClearing = 0;
 			time_country = 0;
 		end
-		if (reg_counter > data_yellow-1) begin
-			isClearing = 1;
+		if (reg_counter >= data_yellow) begin
 			if (state == STATE_HY || state == STATE_SY) time_yellow = 1;
 			else time_yellow = 0;
 		end
 		else begin
 			time_yellow = 0;
-			isClearing = 0;
 		end
 
 		case (state)

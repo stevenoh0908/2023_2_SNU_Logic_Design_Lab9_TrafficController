@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Dec 01 17:18:06 2023
+// Written by: Map P.20131013 on Fri Dec 01 20:15:44 2023
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -24,13 +24,11 @@ COMP "highway_yellow" LOCATE = SITE "P92" LEVEL 1;
 COMP "reset" LOCATE = SITE "P47" LEVEL 1;
 COMP "time_country<0>" LOCATE = SITE "P42" LEVEL 1;
 COMP "time_country<1>" LOCATE = SITE "P41" LEVEL 1;
-COMP "isClearing" LOCATE = SITE "P55" LEVEL 1;
 COMP "time_country<2>" LOCATE = SITE "P33" LEVEL 1;
 COMP "time_country<3>" LOCATE = SITE "P32" LEVEL 1;
 COMP "highway_red" LOCATE = SITE "P91" LEVEL 1;
 COMP "timer_seg_low<0>" LOCATE = SITE "P85" LEVEL 1;
 COMP "timer_seg_low<1>" LOCATE = SITE "P84" LEVEL 1;
-COMP "check" LOCATE = SITE "P58" LEVEL 1;
 COMP "time_yellow<0>" LOCATE = SITE "P46" LEVEL 1;
 COMP "timer_seg_low<2>" LOCATE = SITE "P83" LEVEL 1;
 COMP "time_yellow<1>" LOCATE = SITE "P45" LEVEL 1;
